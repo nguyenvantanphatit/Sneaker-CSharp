@@ -1,0 +1,71 @@
+﻿@model Sneaker.Models.NCC
+
+@{ ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">CHI TIẾT NHÀ CUNG CẤP</h3>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        
+                        <dl class="dl-horizontal">
+                            <dt>
+                                TÊN NHÀ CUNG CẤP
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TENNCC)
+                            </dd>
+
+                            <dt>
+                                ĐỊA CHỈ
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DIACHI)
+                            </dd>
+
+                            <dt>
+                                ĐIỆN THOẠI
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DIENTHOAI)
+                            </dd>
+
+                        </dl>
+
+                    </table>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<div style="text-align:center">
+    <p>
+        @Html.ActionLink("Sửa", "Edit", new { id = Model.MANCC }) |
+        @Html.ActionLink("Quay lại", "Index")
+    </p>
+</div>
+

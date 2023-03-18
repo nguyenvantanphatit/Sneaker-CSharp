@@ -1,0 +1,135 @@
+﻿@using Sneaker.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+
+@helper Truncate(string input, int length)
+{if (input.Length < length)
+    {
+@input }
+else
+{
+@input.Substring(0, length) <text>...</text>}
+}
+
+@{ ViewBag.Title = "SanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead" style="text-align: center; color: red;">SẢN PHẨM</p>
+            <div class="list-group">
+                <p>
+                    @Html.ActionLink("THÊM SẢN PHẨM", "Themmoisp")
+                </p>
+                <p>
+                    @Html.ActionLink("ImportExcel", "ImportExcel", "Excel")
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                TÊN SẢN PHẨM
+                            </th>
+                            <th>
+                                GIÁ BÁN
+                            </th>
+                            <th>
+                                ẢNH BÌA
+                            </th>
+                            <th>
+                                MÔ TẢ
+                            </th>
+                            <th>
+                                NGÀY SẢN XUẤT
+                            </th>
+                            <th>
+                                NƠI SẢN XUẤT
+                            </th>
+                            <th>
+                                SỐ LƯỢNG
+                            </th>
+                            <th>
+                                MÃ LOẠI
+                            </th>
+                            <th>
+                                MÃ NCC
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TENSP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GIABAN)
+                </td>
+                <td>
+                    <img src="~/Public/img/@item.ANHBIA" style="width:70px;height:70px;" />
+                </td>
+                <td>
+                    @Truncate(item.MOTA, 100)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NGAYSANXUAT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOISANXUAT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LOAISP.TENLOAI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NCC.TENNCC)
+                </td>
+                <td style="width:200px;">
+                    @Html.ActionLink("Sửa", "SuaSP", new { id = item.MASP }) |
+                    @Html.ActionLink("Chi Tiết", "ChitietSP", new { id = item.MASP }) |
+                    @Html.ActionLink("Xóa", "XoaSP", new { id = item.MASP })
+                </td>
+            </tr>
+}
+
+                    </table>
+                </div>
+                <div>
+
+                    Trang @(Model.PageCount<Model.PageNumber ?0:Model.PageNumber)/@Model.PageCount
+                </div>
+                <div class="MenuTrang">
+
+                    @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
+
+                </div>
+                <style>
+                    .MenuTrang li {
+                        display: inline;
+                        color: red;
+                    }
+                </style>
+            </div>
+
+          
+
+        </div>
+
+    </div>
+
+</div>
+
+

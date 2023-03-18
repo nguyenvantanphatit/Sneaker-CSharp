@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "VerifyAccount";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{
+    <div class="alert alert-success">
+        <strong>ĐĂNG KÝ THÀNH CÔNG!</strong>TÀI KHOẢN CỦA BẠN ĐÃ ĐƯỢC KÍCH HOẠT. Vui lòng ấn vào nút đăng nhập kế bên để kết thúc quá trình xác thực tài khoản @Html.ActionLink("Đăng nhập", "Login", "KhachHang")
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        <strong>Error!</strong> @ViewBag.Message
+    </div>
+}

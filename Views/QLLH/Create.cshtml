@@ -1,0 +1,57 @@
+﻿@model Sneaker.Models.LIENHE
+
+@{ ViewBag.Title = "Create";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">TẠO LIÊN HỆ</h3>
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+                <div class="container">
+                    <div class="form-horizontal">
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            HỌ TÊN
+                            <div class="col-md-10" style="width:300px;">
+                                @Html.EditorFor(model => model.HOTEN, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.HOTEN, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            EMAIL
+                            <div class="col-md-10" style="width:300px;">
+                                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            CHỦ ĐỀ
+                            <div class="col-md-10" style="width:300px;">
+                                @Html.EditorFor(model => model.CHUDE, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CHUDE, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            NÔI DUNG
+                            <div class="col-md-10" style="width:300px;">
+                                @Html.EditorFor(model => model.NOIDUNG, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NOIDUNG, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Thêm Mới" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                </div>}
+
+<div>
+    @Html.ActionLink("Quay Lại", "Index")
+</div>

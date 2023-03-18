@@ -1,0 +1,28 @@
+﻿
+@{ ViewBag.Title = "SPTheoLoai";
+                Layout = "~/Views/Shared/_LayoutSite.cshtml"; }
+
+<div class="container">
+    <div class="row">
+        <h3 class="text-center my-3 " style="color:red;">SẢN PHẨM THEO SIZE</h3>
+        @foreach (var sp in Model)
+        {
+<div class=" col-md-3">
+    <div class="card" style="width: 100%;margin-top:15px;">
+        <img src="~/Public/img/@sp.ANHBIA" class="card-img-top" alt="...">
+        <div class="card-body">
+            <a href="@Url.Action("Details", "Site", new { id = sp.MASP })" style="text-decoration:none;">
+
+                <h5 class="card-title" style="font-size:17px;">@sp.TENSP</h5>
+            </a>
+            <h5 style="font-size:15px;">Giá Bán: @sp.GIABAN</h5>
+            <a href="@Url.Action("ThemGioHang","GioHang", new { @iMASP =sp.MASP, @strURL = Request.Url.ToString()})" class="btn btn-primary">Đặt mua</a>
+        </div>
+    </div>
+</div>}
+        <div>
+            @Html.ActionLink("Trở về", "Product")
+        </div>
+
+    </div>
+</div>

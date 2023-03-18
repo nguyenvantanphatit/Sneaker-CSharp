@@ -1,0 +1,52 @@
+﻿@using Sneaker.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+
+@{ ViewBag.Title = "Product";
+                Layout = "~/Views/Shared/_LayoutSite.cshtml"; }
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 my-5">
+            @Html.Action("Loaisp", "Site")
+
+            @Html.Action("NhaCC", "Site")
+        </div>
+        <div class="col-md-8">
+            <h3 class="text-center my-3">TẤT CẢ SẢN PHẨM</h3>
+            <div class="row ">
+                @foreach (var tatcasanpham in Model)
+                {
+    <div class=" col-md-4 my-2">
+        <div class="card" style="width: 100%;">
+            <img src="~/Public/img/@tatcasanpham.ANHBIA" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a href="@Url.Action("Details","Site", new { id =tatcasanpham.MASP})" style="text-decoration:none">
+                    <h5 class="card-title" style="font-size:17px;">@tatcasanpham.TENSP</h5>
+                </a>
+                <h5 style="font-size:18px;">Giá Hiện Tại: @tatcasanpham.GIABAN VND</h5>
+                <h6 style="font-size:15px;text-decoration:line-through;color:red">Giá Chưa Giảm: @tatcasanpham.GIAGIAM VND</h6>
+                <a href="@Url.Action("ThemGioHang","GioHang", new { @iMASP =tatcasanpham.MASP, @strURL = Request.Url.ToString()})" class="btn btn-primary">Đặt mua</a>
+            </div>
+        </div>
+    </div>}
+
+            </div>
+
+            Trang @(Model.PageCount<Model.PageNumber ?0:Model.PageNumber)/@Model.PageCount
+            <div class="MenuTrang ">
+
+                @Html.PagedListPager(Model, page => Url.Action("Product", new { page = page }))
+
+            </div>
+            <style>
+                .MenuTrang li {
+                    display: inline;
+                    color: red;   
+                }
+            </style>
+        </div>
+    </div>
+</div>
+
+

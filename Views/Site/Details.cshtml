@@ -1,0 +1,68 @@
+﻿
+@{ ViewBag.Title = "Details";
+                Layout = "~/Views/Shared/_LayoutSite.cshtml"; }
+<div class="container mt-3">
+    <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post">
+        <input type="hidden" name="sp_ma" id="sp_ma" value="5">
+        <input type="hidden" name="sp_ten" id="sp_ten" value="Giày">
+        <input type="hidden" name="sp_gia" id="sp_gia" value="2.500.000">
+        <input type="hidden" name="hinhdaidien" id="hinhdaidien" value="SP1.jpg">
+
+        <div class="wrapper row">
+            <div class="preview col-md-6">
+                <div class="preview-pic tab-content">
+                    <div class="tab-pane" id="pic-1">
+                        <img src="~/Public/img/@Model.ANHBIA">
+                    </div>
+
+                </div>
+                <ul class="preview-thumbnail nav nav-tabs">
+                    <li class="active">
+                        <a data-target="#pic-1" data-toggle="tab" class="">
+                            <img src="~/Public/img/@Model.ANHBIA" class="img-fluid" style="height:400px; width:800px" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="details col-md-6">
+                <h3 style="margin-right:550px" class="product-title">@Model.TENSP</h3>
+                <div class="rating">
+                    <div class="stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="review-no">999 reviews</span>
+                </div>
+                <p class="product-description">Chất liệu thoải mái</p>
+                <h4 class="price">Giá hiện tại: <span>:@Model.GIABAN</span></h4>
+                <h4 class="price" style="text-decoration:line-through">Giá giảm tại: <span>:@Model.GIAGIAM</span></h4>
+                <p class="vote">
+                    <strong>100%</strong> hàng <strong>thật</strong>, đảm bảo
+                    <strong>
+                        Uy
+                        tín
+                    </strong>!
+                </p>
+
+                <div class="datmua mt-2">
+                    <a href="@Url.Action("ThemGioHang","GioHang", new { @iMASP =@Model.MASP, @strURL = Request.Url.ToString()})" class="list-group-item" style="width:200px; background-color:red;">  Thêm vào giỏ hàng</a>
+                    <a class="like btn btn-default" href="#"><span class="fa fa-heart"></span></a>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+<div class="container mt-3">
+    <h3>Thông tin chi tiết về Sản phẩm</h3>
+    <div class="row">
+        <div class="col">
+            Đảm bảo hàng thật đến tay người mua.
+        </div>
+    </div>
+</div>
+<div class="fb-comments" data-href="https://localhost:44323/Site/Index" data-width="700" data-numposts="5"></div>
+

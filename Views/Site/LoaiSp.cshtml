@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Sneaker.Models.LOAISP>
+<div class="card bg-info" style="width: 100%;">
+
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            DANH MỤC LOẠI SIZE
+        </a>
+
+        @foreach (var item in Model)
+        {
+<a href="@Url.Action("SPTheoLoai","Site", new { id= item.MALOAI}) " class="list-group-item">
+
+    @item.TENLOAI
+</a>}
+    </div>
+</div>
+

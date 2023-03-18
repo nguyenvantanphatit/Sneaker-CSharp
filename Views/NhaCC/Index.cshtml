@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Sneaker.Models.NCC>
+
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">QUẢN LÝ NHÀ CUNG CẤP</h3>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+                <p>
+                    @Html.ActionLink("Thêm nhà cung cấp", "Create")
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                TÊN NHÀ CUNG CẤP
+                            </th>
+                            <th>
+                                ĐỊA CHỈ
+                            </th>
+                            <th>
+                                ĐIỆN THOẠI
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TENNCC)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DIACHI)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DIENTHOAI)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Sửa", "Edit", new { id = item.MANCC }) |
+                            @Html.ActionLink("Chi Tiết", "Details", new { id = item.MANCC }) |
+                            @Html.ActionLink("Xóa", "Delete", new { id = item.MANCC })
+                        </td>
+                    </tr>}
+
+
+
+                    </table>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+

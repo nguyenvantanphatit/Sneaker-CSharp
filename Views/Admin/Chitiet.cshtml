@@ -1,0 +1,83 @@
+﻿@model Sneaker.Models.KHACHHANG
+
+@{ ViewBag.Title = "Chitiet";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h2 style="text-align:center; color: red;">Chi tiết khách hàng</h2>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                HỌ TÊN
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.HOTEN)
+                            </dd>
+
+                            <dt>
+                                TÀI KHOẢN
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TAIKHOAN)
+                            </dd>
+
+                            <dt>
+                                MẬT KHẨU
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.MATKHAU)
+                            </dd>
+
+                            <dt>
+                                EMAIL
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.EMAIL)
+                            </dd>
+
+                            <dt>
+                                SỐ ĐIỆN THOẠI
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DIENTHOAIKH)
+                            </dd>
+
+                            <dt>
+                                ĐỊA CHỈ
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DIACHI)
+                            </dd>
+
+                        </dl>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p style="text-align:center">
+    @Html.ActionLink("Sửa", "Sua", new { id = Model.MAKH }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

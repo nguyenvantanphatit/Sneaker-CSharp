@@ -1,0 +1,68 @@
+﻿@model Sneaker.Models.KhachHangDangNhap
+@{ ViewBag.Title = "ĐĂNG NHẬP";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml"; 
+    }
+
+<h4 style="color:red; text-align:center">@ViewBag.ThongBao</h4>
+<div class="dangnhap container">
+    <h3 class="text-center" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+        ĐĂNG NHẬP TÀI KHOẢN
+    </h3>
+    <table align="center">
+
+        @using (Html.BeginForm())
+        {
+                    @Html.AntiForgeryToken();
+                    @Html.ValidationSummary(true)
+                                    <tr style="height:50px">
+                                        <td>Tên đăng nhập</td>
+                                        <td>
+                                            @Html.EditorFor(model => model.TAIKHOAN, new { htmlAttributes = new { @class = "form-control" } })
+                                            <a style="color:red;font-size:10px">
+                                                @Html.ValidationMessageFor(model => model.TAIKHOAN, "", new { @class = "text-danger" })
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                                    <tr style="height:40px">
+                                                        <td>Mật khẩu</td>
+                                                        <td>
+                                                            @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control" } })
+
+                                                            <a style="color:red;font-size:10px">
+                                                                @Html.ValidationMessageFor(model => model.MATKHAU, "", new { @class = "text-danger" })
+
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                                    <tr style="height:40px">
+
+                                                                        <td>Ghi nhớ tài khoản</td>
+                                                                        <td>
+                                                                            <div class="checkbox" style="margin-left:20px">
+                                                                                @Html.EditorFor(model => model.RememberMe)
+                                                                                @Html.ValidationMessageFor(model => model.RememberMe, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                            <div>
+                                                                                @Html.ActionLink("Quên mật khẩu", "ForgotPassword", "KhachHang")
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                                    <tr style="height:40px;">
+                                                                                        <td></td>
+                                                                                        <td>
+                                                                                            <input type="submit" value="Đăng nhập" class="btn btn-danger" />
+                                                                                        </td>
+                                                                                    </tr>}
+    </table>
+</div>
+<style>
+    .dangnhap {
+        margin-top: 100px;
+        border: 2px solid #ff0000;
+        width: 500px;
+        border-radius: 10px;
+        margin-bottom: 150px;
+    }
+</style>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Sneaker.Models.NCC>
+<div class="card bg-info mt-3" style="width: 100%;">
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            DANH MỤC NHÀ CUNG CẤP
+        </a>
+
+        @foreach (var item in Model)
+        {
+<a href="@Url.Action("SPTheoNCC","Site",new { id= item.MANCC}) " class="list-group-item">
+
+    @item.DIACHI
+
+
+</a>}
+    </div>
+</div>
+

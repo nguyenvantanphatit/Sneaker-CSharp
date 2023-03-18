@@ -1,0 +1,181 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/css/LayoutSite.css" rel="stylesheet" />
+    <link href="~/Public/css/all.min.css" rel="stylesheet" />
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="1BSHhoYn"></script>
+
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <section class="header" style="background-color:floralwhite">
+        <div class="row">
+            <div class="col-md-3">
+               <a href="~/site"> <img src="~/Public/img/LogoNike.jpg" style="height:50px; width:50px; margin-left:50px;margin-top:30px" /></a>
+            </div>
+            <div class="col-md-4 mt-md-3 text-center">
+                @using (Html.BeginForm("KQTimKiem", "TimKiem"))
+                {
+                    <div class="input-group mb-3 ">
+                        <input type="text" class="form-control" placeholder="Nhập từ khóa"
+                               name="search" style="height:40px;">
+                     
+                            <input type="submit" name="submit" value="Tìm kiếm" style="width:150px"  />
+
+                       
+                    </div>
+                }
+            </div>
+
+            <div class="col-md-5 mt-md-3" style="padding-left:160px;">
+                <div class="user">
+                    <ul>
+                        <li class="dropdown">
+                            <i class="fas fa-user" style="font-size:20px"></i>  <a class="dropbtn"
+                                                                                   style="color:black;font-weight:bold;
+                            text-decoration:none; padding-top:20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                TÀI KHOẢN  |
+                            </a>
+                            <div class="dropdown-content" ">
+                                <a href="/dangnhap">Đăng nhập</a>
+                                <a href="/dangky">Đăng ký</a>
+                            </div>
+
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cart">
+                    @Html.Action("GiohangPartial", "Giohang")
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="mainmenu" style="background-color: powderblue ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid container">
+                    <a class="navbar-brand d-none" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="~/site">TRANG CHỦ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/gioithieu">GIỚI THIỆU</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="/tatcasanpham" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    SIZE
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="/tatcasanpham">Tất cả size</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/1">36</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/2">37</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/3">38</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/4">39</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/5">40</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/6">41</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/7">42</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/8">43</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/9">44</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/11">44</a></li>
+                                    <li><a class="dropdown-item" href="/Site/SPTheoLoai/12">45</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/lienhe">LIÊN HỆ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="/tintuc">TIN TỨC</a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section class="content" >
+        @RenderBody()
+    </section>  
+    <section class="footer" style="background-color: powderblue">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <h2>DANH MỤC</h2>
+                    <ul>
+                        <li>Nike</a></li>
+                        <li>Adidas</a></li>
+                        <li>Gucci</a></li>
+                        <li>Dior</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h2>HỖ TRỢ</h2>
+                    <ul>
+                        <li>Tên: Nguyễn Văn Tấn Phát</li>
+                        <li>SĐT: 0374225294</li>
+                        <li>Địa chỉ: 35/5 Đường số 4 Trường Thọ Thủ Đức</li>
+                    </ul>
+                </div>
+              
+                <div class="col-md-3">
+                    <h2>CHI NHÁNH CỬA HÀNG</h2>
+                    <ul>
+                        <li>CN1: Quận 1</li>
+                        <li>CN2: Quận Thủ Đức</li>
+                        <li>CN3: Quận 9</li>
+                        <li>CN4: Quận 4</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h2>LIÊN HỆ</h2>
+                    
+                  <a href="https://www.facebook.com/tanphat05062001">  <i class="fab fa-facebook" style="font-size:40px; color:black"></i>  </a>
+                   <a href="https://www.instagram.com/tannnphatttttttt/"> <i class="fab fa-instagram-square" style="font-size:40px; color:black;"></i></a>
+                             
+                                    
+
+            </div>
+        </div>
+      </div>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+<style>
+    .footer li a{
+        text-decoration:none;
+        color:black;
+    }
+    .footer li a:hover{
+        color:#3932e6;
+    }
+    .container-fluid li {
+        font:40px;
+        font-weight:bold;
+        font-family:Arial;
+        padding-left:60px;
+
+    }
+    
+    .navbar-light .navbar-nav .nav-link:hover{
+        color:#1043aa;
+    }
+    
+    
+</style>

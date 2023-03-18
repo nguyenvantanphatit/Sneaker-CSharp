@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ede2e250ff640568595b3f7fa671465" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBanGiayModel.ADMIN" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiayModel.CHITIETHOADON" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiayModel.DONDATHANG" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiayModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiayModel.LIENHE" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiayModel.LOAISP" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiayModel.NCC" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiayModel.SANPHAM" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiayModel.TINTUC" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="QLBanGiayModel.FK_CHITIETHOADON_DONDATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiayModel.FK_CHITIETHOADON_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiayModel.FK_DONDATHANG_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiayModel.FK_SANPHAM_LOAISP" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiayModel.FK_SANPHAM_NCC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

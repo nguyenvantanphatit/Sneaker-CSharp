@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Sneaker.Models.LOAISP>
+
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;"> QUẢN LÝ LOẠI SẢN PHẨM</h3>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <p class="lead" style="text-align: center; color: red;"> LOẠI SẢN PHẨM</p>
+            <div class="list-group">
+                <p>
+                    @Html.ActionLink("THÊM LOẠI SẢN PHẨM", "Create")
+                </p>             
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                TÊN LOẠI
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TENLOAI)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Sửa", "Edit", new { id = item.MALOAI }) |
+                            @Html.ActionLink("Chi Tiết", "Details", new { id = item.MALOAI }) |
+                            @Html.ActionLink("Xóa", "Delete", new { id = item.MALOAI })
+                        </td>
+                    </tr>
+}
+
+                    </table>
+                </div>
+               
+                
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+

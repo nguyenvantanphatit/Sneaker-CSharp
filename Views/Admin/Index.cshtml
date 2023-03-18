@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Sneaker.Models.KHACHHANG>
+
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+
+<h3 style="text-align:center; color:red;">QUẢN LÝ KHÁCH HÀNG</h3>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+            
+            <div class="list-group">
+                <p>
+                    @Html.ActionLink("Thêm tài khoản", "Tao")
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                HỌ TÊN
+                            </th>
+                            <th>
+                                TÀI KHOẢN
+                            </th>               
+                            <th>
+                                EMAIL
+                            </th>
+                            <th>
+                                SỐ ĐIỆN THOẠI
+                            </th>
+                            <th>
+                                ĐỊA CHỈ
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HOTEN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TAIKHOAN)
+                        </td>           
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EMAIL)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DIENTHOAIKH)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DIACHI)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Sửa", "Sua", new { id = item.MAKH }) |
+                            @Html.ActionLink("Chi Tiết", "Chitiet", new { id = item.MAKH }) |
+                            @Html.ActionLink("Xóa", "Xoa", new { id = item.MAKH })
+                        </td>
+                    </tr>
+}
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,118 @@
+﻿@model Sneaker.Models.SANPHAM
+
+@{ ViewBag.Title = "ChitietSP";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">THÔNG TIN SẢN PHẨM</h3>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+            
+            <div class="list-group">           
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12"  >
+                    <table class="table">
+                       
+                        <dl class="dl-horizontal">
+                            <dt>
+                                TÊN SẢN PHẨM:
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TENSP)
+                            </dd>
+
+                            <dt>
+                                GIÁ BÁN
+                            </dt>
+
+                            <dd>
+                                @string.Format("{0:0,0}", Model.GIABAN) VNĐ
+                            </dd>
+
+                            <dt>
+                                ẢNH BÌA
+                            </dt>
+
+                            <dd>
+                                <img src="~/Public/img/@Model.ANHBIA" style="width:120px;height:120px;" />
+                            </dd>
+
+                            <dt>
+                                MÔ TẢ
+                            </dt>
+
+                            <dd style="width:600px; text-align:justify">
+                                @Html.DisplayFor(model => model.MOTA)
+                            </dd>
+
+                            <dt>
+                                NGÀY CẬP NHẬT
+                            </dt>
+
+                            <dd>
+                                @string.Format("{0:dd/MM/yyy}", Model.NGAYSANXUAT)
+                            </dd>
+
+                            <dt>
+                                NƠI SẢN XUẤT
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NOISANXUAT)
+                            </dd>
+
+                            <dt>
+                                SỐ LƯỢNG
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SL)
+                            </dd>
+
+                            <dt>
+                                LOẠI SẢN PHẨM
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LOAISP.TENLOAI)
+                            </dd>
+                            @*<dt>
+                                Tên Nhà Cung Cấp
+                            </dt>
+                            <dd>
+                                @Html.DisplayNameFor(model => model.NCC.TENNCC)
+                            </dd>*@
+                            <dt>
+                                Mã Nhà Cung Cấp
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.MANCC)
+                            </dd>
+
+                        </dl>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="text-align:center;">
+    <p>
+        @Html.ActionLink("Sửa", "SuaSP", new { id = Model.MASP }) |
+        @Html.ActionLink("Quay Lại", "SanPham")
+    </p>
+</div>
+

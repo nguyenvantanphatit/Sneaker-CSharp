@@ -1,0 +1,54 @@
+﻿@model Sneaker.Models.LOAISP
+
+@{ ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">CHI TIẾT SẢN PHẨM</h3>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                TÊN LOẠI
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TENLOAI)
+                            </dd>
+
+                        </dl>
+                    </table>
+                </div>
+                
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<div style="text-align:center;">
+    <p>
+        @Html.ActionLink("Sửa", "Edit", new { id = Model.MALOAI }) |
+        @Html.ActionLink("Quay lại", "Index")
+    </p>
+</div>
+

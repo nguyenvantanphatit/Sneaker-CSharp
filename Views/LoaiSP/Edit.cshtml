@@ -1,0 +1,66 @@
+﻿@model Sneaker.Models.LOAISP
+
+@{ ViewBag.Title = "Edit";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">ĐIỀU CHỈNH THÔNG TIN LOẠI SẢN PHẨM</h3>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+                
+            <div class="list-group">
+                
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        @using (Html.BeginForm())
+                        {
+            @Html.AntiForgeryToken()
+                            <div class="container">
+                                <div class="form-horizontal">
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.MALOAI)
+
+                                    <div class="form-group">
+                                        TÊN LOẠI
+                                        <div class="col-md-10" style="width: 300px; margin-top: 20px ">
+                                            @Html.EditorFor(model => model.TENLOAI, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.TENLOAI, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10" style="margin-top:50px">
+                                            <input type="submit" value="Save" class="btn btn-danger" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>}
+
+                    </table>
+                </div >
+                <div style="text-align:center; margin-top:200px">
+                    @Html.ActionLink("Quay lại", "Index")
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+

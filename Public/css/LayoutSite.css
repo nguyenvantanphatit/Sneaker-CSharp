@@ -1,0 +1,78 @@
+﻿.header{
+    height:100px;
+}
+.user ul{
+    list-style:none;
+}
+.user li{
+    float:left;
+}
+li a .dropbtn{
+    text-decoration:none;
+}
+li .dropdown{
+    display:inline-block;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    min-width:150px;
+    box-shadow:0px 8px 16px 0px #ccc5c5;
+    z-index:1;
+}
+.dropdown-content a{
+    color:black;
+    display:block;
+    padding:12px 16px;
+    text-decoration:none;
+    text-align:left;
+}
+.dropdown-content a:hover{background-color:burlywood;}
+.dropdown:hover .dropdown-content{display:block;}
+
+.mainmenu {
+        background-color: red;
+    }
+.slide{
+    height:400px;
+    width:auto;
+}
+.banner img:hover{
+    transform:scale(0.9);
+}
+.card img:hover {
+    transform: scale(0.9);
+}
+.row h3{
+    font-family:'Times New Roman';
+    font-size:20px;
+    text-align:center;
+    color:red;
+}
+.footer{
+    padding-top:30px;
+    background-image:url(../img/f3.jpg);
+    height:200px;
+    margin-top:20px;
+}
+.footer h2{
+    font-size:16px;
+    color:red;
+}
+.footer ul{
+    padding:0px;
+    margin:0px;
+}
+.footer ul li{
+    list-style:none;
+}
+.copyright{
+    text-align:center;
+    font-size:16px;
+    background-color:#efe8e8;
+    font-family:'Times New Roman';
+    height:50px;
+    padding-top:10px;
+}
+
+ 

@@ -1,0 +1,59 @@
+﻿@model Sneaker.Models.LOAISP
+
+@{ ViewBag.Title = "Delete";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">Xóa Loại Sản Phẩm</h3>
+
+<h4 style="text-align:center;color:red;">Bạn có muốn xóa?</h4>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <dl class="dl-horizontal" style="margin-top:20px">
+                            <dt>
+                                TÊN LOẠI
+                            </dt>
+
+                            <dd style="margin-top:20px">
+                                @Html.DisplayFor(model => model.TENLOAI)
+                            </dd>
+
+                        </dl>
+
+                        @using (Html.BeginForm())
+                        {
+                    @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color" style="margin-top:20px; margin-bottom:250px">
+                                        <input type="submit" value="Delete" class="btn btn-danger" /> |
+                                        @Html.ActionLink("Quay lại", "Index")
+                                    </div>
+}
+                    </table>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+

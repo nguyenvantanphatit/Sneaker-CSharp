@@ -1,0 +1,86 @@
+﻿@model Sneaker.Models.DONDATHANG
+
+@{ ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red">CHI TIẾT ĐƠN ĐẶT HÀNG</h3>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+               
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                HỌ TÊN
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.KHACHHANG.HOTEN)
+                            </dd>
+
+                            <dt>
+                                TÌNH TRẠNG GIAO
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TINHTRANGGIAOHANG)
+                            </dd>
+
+                            <dt>
+                                NGÀY ĐẶT
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NGAYDAT)
+                            </dd>
+
+                            <dt>
+                                NGÀY GIAO
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NGAYGIAO)
+                            </dd>
+
+                            <dt>
+                                MÃ KH
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.MAKH)
+                            </dd>
+
+                        </dl>
+                    </table>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<div style="text-align:center; margin-bottom:100px">
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.MADH }) |*@
+        @Html.ActionLink("Quay lại", "Index")
+    </p>
+</div>
+

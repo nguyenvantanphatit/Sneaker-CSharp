@@ -1,0 +1,113 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/css/LayoutSite.css" rel="stylesheet" />
+    <link href="~/Public/css/all.min.css" rel="stylesheet" />
+
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="1BSHhoYn"></script>
+
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <section class="mainmenu" style="background-color: powderblue ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-none" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="~/Admin/Index">TRANG CHỦ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/SanPham">QUẢN LÝ SẢN PHẨM</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/LoaiSP/Index">QUẢN LÝ LOẠI SP</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="~/NhaCC/Index">QUẢN LÝ NHÀ CUNG CẤP</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="~/QLLH/Index">QUẢN LÝ LIÊN HỆ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="~/QLDH/Index">QUẢN LÝ ĐƠN HÀNG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="~/TroGiup/SendGmail">QUẢN LÝ Trợ Giúp</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section class="content">
+        @RenderBody()
+    </section>
+    <section class="footer" style="background-color: powderblue ">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <h2>DANH MỤC</h2>
+                    <ul>
+                        <li>Nike</a></li>
+                        <li>Adidas</a></li>
+                        <li>Gucci</a></li>
+                        <li>Dior</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h2>HỖ TRỢ</h2>
+                    <ul>
+                        <li>Tên: Nguyễn Văn Tấn Phát</li>
+                        <li>SĐT: 0374225294</li>
+                        <li>Địa chỉ: 35/5 Đường số 4 Trường Thọ Thủ Đức</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h2>CHI NHÁNH CỬA HÀNG</h2>
+                    <ul>
+                        <li>CN1: Quận 1</li>
+                        <li>CN2: Quận Thủ Đức</li>
+                        <li>CN3: Quận 9</li>
+                        <li>CN4: Quận 4</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h2>LIÊN HỆ</h2>
+
+                    <a href="https://www.facebook.com/tanphat05062001">  <i class="fab fa-facebook" style="font-size:40px; color:black"></i>  </a>
+                    <a href="https://www.instagram.com/tannnphatttttttt/"> <i class="fab fa-instagram-square" style="font-size:40px; color:black;"></i></a>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <script src="~/Scripts/popper.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+<style>
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: #1043aa;
+    }
+    
+</style>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Sneaker.Models.LIENHE>
+
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">QUẢN LÝ LIÊN HỆ</h3>
+
+<p>
+    @*@Html.ActionLink("THÊM LIEN HE", "Create")*@
+</p>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        
+                        <tr>
+                            <th>
+                                HỌ TÊN
+                            </th>
+                            <th>
+                                EMAIL
+                            </th>
+                            <th>
+                                CHỦ ĐỀ
+                            </th>
+                            <th>
+                                NỘI DUNG
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HOTEN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EMAIL)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CHUDE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NOIDUNG)
+                        </td>
+                        <td>
+                            @*@Html.ActionLink("Edit", "Edit", new { id=item.MALIENHE }) |*@
+                            @Html.ActionLink("Chi Tiết", "Details", new { id = item.MALIENHE }) |
+                            @Html.ActionLink("Xóa", "Delete", new { id = item.MALIENHE })
+                        </td>
+                    </tr>
+}
+
+                    </table>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+

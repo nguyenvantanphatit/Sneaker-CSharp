@@ -1,0 +1,76 @@
+﻿@model Sneaker.Models.LIENHE
+
+@{ ViewBag.Title = "Details";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">CHI TIẾT LIÊN HỆ</h3>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                HỌ TÊN
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.HOTEN)
+                            </dd>
+
+                            <dt>
+                                EMAIL
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.EMAIL)
+                            </dd>
+
+                            <dt>
+                                CHỦ ĐỀ
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CHUDE)
+                            </dd>
+
+                            <dt>
+                                NỘI DUNG
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NOIDUNG)
+                            </dd>
+
+                        </dl>
+                    </table>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<div style="text-align:center">
+    <p>
+        @Html.ActionLink("Quay Lại", "Index")
+    </p>
+</div>
+

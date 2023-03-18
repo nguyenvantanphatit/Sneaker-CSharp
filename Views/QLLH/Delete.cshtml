@@ -1,0 +1,83 @@
+﻿@model Sneaker.Models.LIENHE
+
+@{ ViewBag.Title = "Delete";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center;color:red;">XÓA LIÊN HỆ</h3>
+
+<h4 style="text-align:center;color:red;">Bạn có muốn xóa?</h4>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                HỌ TÊN
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.HOTEN)
+                            </dd>
+
+                            <dt>
+                                EMAIL
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.EMAIL)
+                            </dd>
+
+                            <dt>
+                                CHỦ ĐỀ
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CHUDE)
+                            </dd>
+
+                            <dt>
+                                NỘI DUNG
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NOIDUNG)
+                            </dd>
+
+                        </dl>
+
+                        @using (Html.BeginForm())
+                        {
+                    @Html.AntiForgeryToken()
+
+                                    <div class="form-actions no-color">
+                                        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+                                        @Html.ActionLink("Quay Lại", "Index")
+                                    </div>
+}
+                    </table>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+   

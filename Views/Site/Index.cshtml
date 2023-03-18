@@ -1,0 +1,135 @@
+﻿@model IEnumerable<Sneaker.Models.SANPHAM>
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_LayoutSite.cshtml"; }
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Public/img/banner1.jpg" class="d-block w-100" style="width:auto; height:400px;">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Public/img/banner2.jpg" class="d-block w-100" style="width:auto; height:400px;">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Public/img/banner3.jpg" class="d-block w-100" style="width:auto; height:400px;">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Public/img/banner4.jpg" class="d-block w-100" style="width:auto; height:400px;">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Public/img/banner5.jpg" class="d-block w-100" style="width:auto; height:400px;">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-4 ">
+
+            <img src="~/Public/img/SP01.jpeg" class="img-fluid" ; />
+
+        </div>
+        <div class="col-md-8 bg-body">
+            <br /> <h3 style="font-size:30px;">GIÀY NIKE</h3>
+                   <p>
+                       <br /><br />
+                       Thương hiệu Nike ban đầu có tên gọi là Blue Ribbon Sports (BRS), được thành lập vào ngày 25 tháng 1 năm 1964 bởi cựu sinh viên của Đại học Oregon là Phil Knight và huấn luyện viên của ông, Bill Bowerman. Công ty khởi đầu với việc hoạt động tại khu vực Eugene, Oregon với vai trò là một nhà phân phối mẫu giày Nhật Bản Onitsuka Tiger, hầu hết doanh số của công ty lúc đó đều đến từ việc bán giày trên xe ô tô của Knight.
+                   </p>
+
+        </div>
+    <div class="row mt-3">
+        <h3><b>--------------------SẢN PHẨM MỚI  ----------------------</b></h3>
+
+        @foreach (var SANPHAM in Model)
+        {
+    <div class=" col-md-3 ">
+        <div class="card" style="width: 100%;margin-top:15px">
+            <img src="~/Public/img/@SANPHAM.ANHBIA" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a href="@Url.Action("Details","Site", new { id =SANPHAM.MASP})" style="text-decoration:none">
+                    <h5 class="card-title" style="font-size:17px;">@SANPHAM.TENSP</h5>
+                </a>
+                <h5 style="font-size:15px;">Giá Hiện Tại: @SANPHAM.GIABAN VND</h5>
+
+                <a href="@Url.Action("ThemGioHang","GioHang", new { @iMASP =SANPHAM.MASP, @strURL = Request.Url.ToString()})" class="btn btn-danger">Đặt mua</a>
+            </div>
+        </div>
+    </div>}
+
+        <div class="row mt-4">
+            <div class="col-md-4 ">
+
+                <img src="~/Public/img/SP5.jpg"  class="img-fluid" ; />
+
+            </div>
+            <div class="col-md-8 bg-body">
+                <br /> <h3 style="font-size:30px;">GIÀY JORDAN</h3>
+                       <p>
+                           <br /><br />
+                           Air Jordan là thương hiệu giày dép và trang thiết bị thể thao được thành lập, thiết kế và sản xuất riêng dành riêng cho Michael Jordan bởi một nhánh của Nike có tên thương mại là “Jordan Brand”. Bài viết sẽ chỉ đề cập đến lịch sử ra đời các dòng giày Jordan chính, có số lượng tiêu thụ cao và luôn tạo cơn sốt mỗi khi được ra mắt ( heat ).
+
+                           Các dòng giày Jordan thường được viết tắt là J’s, AJ, ví dụ Air Jordan 1 sẽ gọi là J1’s hoặc 1s hoặc AJ 1, chân thành khuyên nên dừng việc viết tắt Jordan là JD vì nghe khá là củ chuối, giống như phiên âm Jordan thành Jo-Đần và viết tắt là JD vậy.
+                       </p>
+
+            </div>
+        </div>
+        <h3><b>--------------------SẢN PHẨM NỔi BẬT  ----------------------</b></h3>
+        @foreach (var SANPHAM in Model)
+        {
+    <div class=" col-md-3 mt-3">
+        <div class="card" style="width: 100%;">
+            <img src="~/Public/img/@SANPHAM.ANHBIA" class="card-img-top" alt="">
+            <div class="card-body">
+                <a href="@Url.Action("Details","Site", new { id =SANPHAM.MASP})" style="text-decoration:none">
+                    <h5 class="card-title" style="font-size:17px;">@SANPHAM.TENSP</h5>
+                </a>
+                <h5 style="font-size:15px;">Giá Hiện Tại: @SANPHAM.GIABAN VND</h5>
+                <h6 style="font-size: 15px; text-decoration: line-through; color: red">Giá Chưa Giảm: @SANPHAM.GIAGIAM VND</h6>
+                <h7 style="font-size: 15px;margin-top:50px;color:red;">Giảm: @SANPHAM.DISCOUNT %</h7>
+                <a href="@Url.Action("ThemGioHang","GioHang", new { @iMASP =SANPHAM.MASP, @strURL = Request.Url.ToString()})" class="btn btn-danger">Đặt mua</a>
+            </div>
+        </div>
+    </div>}
+
+
+    </div>
+        <section class="dt" >
+            <div class="container" >
+                <div class="row mt-3">
+                    <h3 style="text-align:center;color:red;font-size:25px;">ĐỐI TÁC CHÍNH</h3>
+                    <div class="col-md-3">
+
+                        <a href="https://www.nike.com/vn/">
+                            <img src="~/Public/img/LogoNike.jpg" class="img-fluid" style="height:150px;width:150px; border:2px solid;" />
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://www.adidas.com.vn/vi">
+                            <img src="~/Public/img/Logoadidas.jpg" class="img-fluid" style="height: 150px; width: 150px; border: 2px solid;" />
+                        </a>
+
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://www.dior.com/en_vn">
+                            <img src="~/Public/img/LogoDior.jpg" class="img-fluid" style="height: 150px; width: 150px; border: 2px solid;" />
+                        </a>
+
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://www.chanel.com/vn/">
+                            <img src="~/Public/img/LogoChanel.jpg" class="img-fluid" style="height: 150px; width: 150px; border: 2px solid;" />
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+

@@ -1,0 +1,65 @@
+﻿@model Sneaker.Models.DONDATHANG
+
+@{ ViewBag.Title = "Create";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h3 style="text-align:center">TẠO ĐƠN ĐẶT HÀNG</h3>
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+                <div class=" container">
+                    <div class="form-horizontal">
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            HỌ TÊN
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.KHACHHANG.HOTEN, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.HOTEN, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            TÌNH TRẠNG
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.TINHTRANGGIAOHANG, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TINHTRANGGIAOHANG, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            NGÀY ĐẶT
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.NGAYDAT, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NGAYDAT, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            NGÀY GIAO
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.NGAYGIAO, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NGAYGIAO, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            MÃ KH
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.MAKH, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.MAKH, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                </div>}
+
+<div>
+    @Html.ActionLink("Trở Về", "Index")
+</div>

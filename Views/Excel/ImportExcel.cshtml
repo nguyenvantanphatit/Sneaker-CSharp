@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+   
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("ImportExcel", "Excel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        
+            <table class="table" style="margin-top:500px;margin-left:100px">
+                
+                    <input type="file" name="postedFile" style="margin-top:40px" />
+                    <input type="submit" value="Import" style="margin-top: 40px" />
+                  
+            </table>
+        }
+
+</body>
+</html>

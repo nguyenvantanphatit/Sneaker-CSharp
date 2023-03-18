@@ -1,0 +1,84 @@
+﻿@model Sneaker.Models.KHACHHANG
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<div class="dangky container">
+    <table align="center">
+        <h4 class="text-center" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">ĐĂNG KÝ TÀI KHOẢN</h4>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <tr style="height:40px">
+                <td>Họ tên </td>
+                <td>                  
+                                            
+                        @Html.EditorFor(model => model.HOTEN, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.HOTEN, "", new { @class = "text-danger" })                                       
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td>Tên đăng nhập</td>
+                <td>                    
+                                            
+                        @Html.EditorFor(model => model.TAIKHOAN, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TAIKHOAN, "", new { @class = "text-danger" })                                         
+                </td>
+            </tr>
+
+            <tr style="height:40px">
+                <td>Mật khẩu</td>
+                <td>                      
+                        @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MATKHAU, "", new { @class = "text-danger" })                
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td>Nhập lại mật khẩu</td>
+                <td>                   
+                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })                                           
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td>Email</td>
+                <td>                   
+                        @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+                        @Html.ValidationMessage("EmailExist", new { @class = "text-danger" })                                        
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td>Địa Chỉ</td>
+                <td>                  
+                        @Html.EditorFor(model => model.DIACHI, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DIACHI, "", new { @class = "text-danger" })                      
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td>Điện thoại</td>
+                <td>
+                    
+                            @Html.EditorFor(model => model.DIENTHOAIKH, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DIENTHOAIKH, "", new { @class = "text-danger" })                                           
+                </td>
+            </tr>
+            <tr style="height:40px;">
+                <td></td>
+                <td>
+                    <input type="submit" value="Đăng ký" class="btn btn-danger" style="border:2px solid; border-radius:10px;" />
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<style>
+    .dangky {
+        margin-top: 40px;
+        border: 2px solid #ff0000;
+        width: 500px;
+        border-radius: 10px;
+    }
+</style>

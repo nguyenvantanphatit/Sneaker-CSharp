@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Sneaker.Models.ExcelDonDatHang>
+@{
+    ViewBag.Title = "ExportExcel";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+   
+}
+<h2 style="text-align:center ; color:red">Xuất thông tin đơn hàng</h2>
+<div class="container">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                 <th> Mã Đơn Hàng</th>
+                <th>HoTen</th>
+                <th>Tình Trạng</th>
+                <th>NGAYDAT</th>
+                    <th>NGAYGIAO</th>
+                    <th>MAKH</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var acc in Model)
+                {
+                    <tr>
+                        <td>@acc.MADH</td>
+                        <td>@acc.HOTEN</td>
+                        <td>@acc.TINHTRANGGIAOHANG</td>
+                        <td>@acc.NGAYDAT</td>
+                        <td>@acc.NGAYGIAO</td>
+                        <td>@acc.MAKH</td>
+                    </tr>
+
+                }
+            }
+        </tbody>
+    </table>
+    <a href="@Url.Action("ExportToExcel","Excel")">Xuất thông tin</a>
+</div>
